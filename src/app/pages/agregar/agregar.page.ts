@@ -55,6 +55,6 @@ export class AgregarPage implements OnInit {
 
   borrarItem(i:number){
     this.lista.items.splice(i,1);
-    this.desireServie.guardarStorage();
+    this.desireServie.guardarStorage(); 
   }
 }

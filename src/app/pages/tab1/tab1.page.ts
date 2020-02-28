@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { DesiresService } from '../../services/desires.service'
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { List } from 'src/app/models/list.model';
 
 @Component({
   selector: 'app-tab1',
@@ -22,7 +21,7 @@ export class Tab1Page {
       header: 'Nueva lista',
       inputs:[
         {
-          name: 'titulo',
+          name: 'title',
           type: 'text',
           placeholder: 'nueva lista'
         }
@@ -39,7 +38,7 @@ export class Tab1Page {
           text: 'Crear',
           handler: (data) => {
             console.log(data);
-            if (data.titulo.length ===0){
+            if (data.title.length ===0){
               return;
             }
 
@@ -52,10 +51,6 @@ export class Tab1Page {
     });
 
     alert.present();
-  }
-
-  listaSeleccionada(lista: List){
-    this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`)
   }
 
 }
